@@ -28,8 +28,8 @@ public:
 	float Magnitude();
 	float MagnitudeSqrd();
 
-	void Normalise();
-	Vector3 Normal(); //returns normalised version
+	void NormaliseThis();
+	Vector3 Normalise(); //returns normalised version
 
 
 private:

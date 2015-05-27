@@ -133,7 +133,7 @@ float Vector4::MagnitudeSqrd()
 }
 
 
-void Vector4::Normalise()
+void Vector4::NormaliseThis()
 {
 	float magnitude = Magnitude();
 	if (magnitude != 0)
@@ -146,7 +146,7 @@ void Vector4::Normalise()
 }
 
 
-Vector4 Vector4::Normal()
+Vector4 Vector4::Normalise()
 {
 	Vector4 temp;
 	float magnitude = Magnitude();

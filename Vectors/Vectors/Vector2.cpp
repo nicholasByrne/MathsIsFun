@@ -113,7 +113,7 @@ float Vector2::MagnitudeSqrd()
 }
 
 
-void Vector2::Normalise()
+void Vector2::NormaliseThis()
 {
 	float magnitude = Magnitude();
 	if (magnitude != 0)
@@ -124,7 +124,7 @@ void Vector2::Normalise()
 }
 
 
-Vector2 Vector2::Normal()
+Vector2 Vector2::Normalise()
 {
 	Vector2 temp;
 	float magnitude = Magnitude();
@@ -134,4 +134,10 @@ Vector2 Vector2::Normal()
 		temp.y = y / magnitude;
 	}
 	return temp;
+}
+
+
+float Vector2::dot(Vector2 &other)
+{
+	return ((x * other.x) + (y * other.y));
 }
