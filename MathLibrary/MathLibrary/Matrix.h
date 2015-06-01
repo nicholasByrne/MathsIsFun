@@ -21,6 +21,8 @@ public:
 	void operator-=(const Matrix3x3 &other);
 	void operator+=(const Matrix3x3 &other);
 	void operator*=(const Matrix3x3 &other);
+
+	int operator[](int index); //FIX DIS
 	
 	//builds and returns new identity matrix
 	static Matrix3x3 Identity();

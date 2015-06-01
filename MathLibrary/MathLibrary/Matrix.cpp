@@ -24,6 +24,12 @@ Matrix3x3::~Matrix3x3()
 //}
 
 
+int Matrix3x3::operator[](int index)
+{
+	data[index];
+}
+
+
 void Matrix3x3::operator=(const Matrix3x3 &other)
 {
 	for (int i = 0; i < 3; i++)
@@ -93,15 +99,41 @@ Matrix3x3 Matrix3x3::operator*(const Matrix3x3 &other) const
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			matrix.data[i][j] = data[i][j] 
+			int sum = 0;
+			for (int k = 0; k < 3; k++)
+			{
+				matrix.data[i][j] = (data[i][k] * other.data[k][j]);
+			}
+			matrix.data[i][j] = sum;
 		}
 	}
+	return matrix;
 }
 
 
-void Matrix3x3::operator*=(const Matrix3x3 &other) 
+void Matrix3x3::operator*=(const Matrix3x3 &other) //FIX ERROR
 {
+	Matrix3x3 matrix;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			int sum = 0;
+			for (int k = 0; k < 3; k++)
+			{
+				matrix.data[i][j] = (data[i][k] * other.data[k][j]);
+			}
+			matrix.data[i][j] = sum;
+		}
+	}
 
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			data[i][j] = matrix.data[i][j];
+		}
+	}
 }
 
 //Matrix3x3 Matrix3x3::operator/(const Matrix3x3 &other) const
