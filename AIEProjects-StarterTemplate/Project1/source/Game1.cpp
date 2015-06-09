@@ -20,7 +20,7 @@ Game1::Game1(unsigned int windowWidth, unsigned int windowHeight, bool fullscree
 	playerGunAngle = 0.0f;
 	angle = 0.0f;
 	bulletManager = new BulletManager(m_spritebatch);
-	
+	collisionManager;
 }
 
 Game1::~Game1()

@@ -86,6 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\CollisionManager.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\BulletManager.cpp" />
     <ClCompile Include="source\Entity.cpp" />
@@ -95,6 +96,7 @@
     <ClCompile Include="source\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\CollisionManager.h" />
     <ClInclude Include="include\Bullet.h" />
     <ClInclude Include="include\BulletManager.h" />
     <ClInclude Include="include\Entity.h" />

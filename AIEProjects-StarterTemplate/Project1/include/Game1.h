@@ -8,7 +8,7 @@ Description:
 
 #include "Application.h"
 class SpriteBatch;
-
+#include "CollisionManager.h"
 #include "BulletManager.h"
 #include "Vector2.h"
 #include <cmath>
@@ -32,6 +32,7 @@ public:
 protected:
 
 	SpriteBatch *m_spritebatch;
+	CollisionManager collisionManager;
 	Texture * m_playerTexture;
 	Texture * m_bulletTexture;
 	Vector2 playerPos;

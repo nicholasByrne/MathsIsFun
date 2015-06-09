@@ -42,6 +42,9 @@
     <ClCompile Include="source\Bullet.cpp">
       <Filter>Source Files\Game Object</Filter>
     </ClCompile>
+    <ClCompile Include="source\CollisionManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game1.h">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="include\Player.h">
       <Filter>Header Files\Game Object</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CollisionManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

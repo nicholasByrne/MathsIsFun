@@ -31,6 +31,7 @@ public:
 	void NormaliseThis();
 	Vector4 Normalise(); //returns normalised version
 
+	Vector4 Cross(Vector4 &other, Vector4 &another);
 
 private:
 
