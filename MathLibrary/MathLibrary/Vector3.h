@@ -1,5 +1,6 @@
 #pragma once
 #include <math.h>
+//#include "Matrix3x3.h"
 
 class Vector3
 {
@@ -19,7 +20,7 @@ public:
 	Vector3 operator-(Vector3 &other);
 	void operator-=(Vector3 &other);
 
-	Vector3 operator*(float scalar);
+	Vector3 operator*(float scalar); //V = V * f,	V = f * V
 	void operator*=(float scalar);
 
 	Vector3 operator/(Vector3 &other);
@@ -28,7 +29,7 @@ public:
 	float Magnitude();
 	float MagnitudeSqrd();
 
-	void NormaliseThis();
+	Vector3 NormaliseThis(); //returns *this
 	Vector3 Normalise(); //returns normalised version
 
 	Vector3 Cross(Vector3 &other, Vector3 &another);

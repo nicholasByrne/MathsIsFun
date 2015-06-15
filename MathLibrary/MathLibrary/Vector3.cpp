@@ -123,7 +123,7 @@ float Vector3::MagnitudeSqrd()
 }
 
 
-void Vector3::NormaliseThis()
+Vector3 Vector3::NormaliseThis()
 {
 	float magnitude = Magnitude();
 	if (magnitude != 0)
@@ -132,6 +132,7 @@ void Vector3::NormaliseThis()
 		y /= magnitude;
 		z /= magnitude;
 	}
+	return *this;
 }
 
 

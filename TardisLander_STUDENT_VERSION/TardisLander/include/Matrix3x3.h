@@ -1,5 +1,6 @@
 #pragma once
 #include "Vector3.h"
+#include "Matrix4x4.h"
 
 //uses floating-point data in row-major right-handed form:
 class Matrix3x3
@@ -40,6 +41,8 @@ public:
 	Matrix3x3 Transpose();
 	//Builds and returns a new matrix that is this the transpose of this matrix
 	Matrix3x3 GetTranspose() const;
+
+	Matrix4x4 Mat4();
 
 	float data[3][3];
 

@@ -28,7 +28,7 @@ public:
 	float Magnitude();
 	float MagnitudeSqrd();
 
-	void NormaliseThis(); //
+	Vector2 NormaliseThis(); //returns *this
 	Vector2 Normalise(); //returns normalised version
 
 	float dot(Vector2 &other);

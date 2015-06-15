@@ -83,9 +83,9 @@ void Player::Draw() {
 	if(m_bFlameOn) {
 		
 		Matrix3x3 transpose = Matrix3x3::CreateTranslation(Vector3(m_position.x, m_position.y, 0));
-
+		
 		Matrix3x3 rotation = Matrix3x3::CreateRotation(m_rotation * (M_PI / 180));
-
+		
 		Matrix3x3 translation = rotation * transpose;
 
 		//origin can be thought of as displacement from ship

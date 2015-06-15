@@ -109,6 +109,15 @@ Matrix2x2 Matrix2x2::operator*(const Matrix2x2 &other) const
 }
 
 
+Vector2 Matrix2x2::operator*(const Vector2 &other) const
+{
+	Vector2 result;
+	result.x = (data[0][0] * other.x + data[0][1] * other.y);
+	result.y = (data[1][0] * other.x + data[1][1] * other.y);
+	return result;
+}
+
+
 Matrix2x2 Matrix2x2::operator*=(const Matrix2x2 &other)
 {
 	Matrix2x2 matrix;
@@ -155,7 +164,7 @@ float Matrix2x2::operator()(unsigned int row, unsigned int col)
 
 
 //builds and returns new identity matrix
-static Matrix2x2 Identity()
+Matrix2x2 Matrix2x2::Identity()
 {
 	Matrix2x2 identity;
 	for (int i = 0; i < 2; i++)
@@ -168,19 +177,40 @@ static Matrix2x2 Identity()
 				identity.data[i][j] = 0;
 		}
 	}
+	return identity;
 }
 
 
-//static Matrix2x2 CreateRotation(float radians)
+Matrix2x2 Matrix2x2::CreateRotation(float radians)
+{
+	Matrix2x2 rotationMatrix;
+	rotationMatrix.data[0][0] = cos(radians);
+	rotationMatrix.data[0][1] = cos(radians + 90);
+	rotationMatrix.data[1][0] = sin(radians);
+	rotationMatrix.data[1][1] = sin(radians + 90);
+	return rotationMatrix;
+}
+
+
+Matrix2x2 Matrix2x2::CreateScale(const Vector2 &scale)
+{
+	Matrix2x2 scaleMatrix;
+	scaleMatrix.data[0][0] = scale.x;
+	scaleMatrix.data[1][1] = scale.y;
+	return scaleMatrix;
+}
+
+
+//Matrix2x2 Matrix2x2::CreateTranslation(const Vector2 &translation) // V fix dis V
 //{
-//
+//	Matrix2x2 translationMatrix;
+//	translationMatrix.data[0][0] = 1;
+//	translationMatrix.data[1][1] = 1;
+//	translationMatrix.data[2][2] = 1;
+//	translationMatrix.data[0][2] = translation.x;
+//	translationMatrix.data[1][2] = translation.y;
+//	return translationMatrix;
 //}
-
-
-//builds and returns a new scale matrix
-static Matrix2x2 CreateScale(const Vector2 &scale);
-//builds and returns a new translation matrix
-static Matrix2x2 CreateTranslation(const Vector2 &translation);
 
 
 Matrix2x2 Matrix2x2::Transpose()

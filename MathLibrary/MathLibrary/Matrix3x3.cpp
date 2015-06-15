@@ -109,6 +109,17 @@ Matrix3x3 Matrix3x3::operator*(const Matrix3x3 &other) const
 }
 
 
+Vector3 Matrix3x3::operator*(const Vector3 &other) const
+{
+	Vector3 result;
+	result.x = (data[0][0] * other.x + data[0][1] * other.y + data[0][2] * other.z);
+	result.y = (data[1][0] * other.x + data[1][1] * other.y + data[1][2] * other.z);
+	result.z = (data[2][0] * other.x + data[2][1] * other.y + data[2][2] * other.z);
+	return result;
+}
+
+
+
 Matrix3x3 Matrix3x3::operator*=(const Matrix3x3 &other)
 {
 	Matrix3x3 matrix;
@@ -124,7 +135,6 @@ Matrix3x3 Matrix3x3::operator*=(const Matrix3x3 &other)
 			matrix.data[i][j] = sum;
 		}
 	}
-
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
@@ -155,7 +165,7 @@ float Matrix3x3::operator()(unsigned int row, unsigned int col)
 
 
 
-static Matrix3x3 Identity()
+Matrix3x3 Matrix3x3::Identity()
 {
 	Matrix3x3 identity;
 	for (int i = 0; i < 3; i++)
@@ -168,40 +178,45 @@ static Matrix3x3 Identity()
 				identity.data[i][j] = 0;
 		}
 	}
+	return identity;
 }
 
 
-static Matrix3x3 CreateRotation(float radians)
+Matrix3x3 Matrix3x3::CreateRotation(float radians)
 {
-
+	Matrix3x3 rotationMatrix;
+	rotationMatrix.data[0][0] = cos(radians);
+	rotationMatrix.data[0][1] = cos(radians + 90);
+	rotationMatrix.data[1][0] = sin(radians);
+	rotationMatrix.data[1][1] = sin(radians + 90);
+	return rotationMatrix;
 }
 
 
-static Matrix3x3 CreateScale(const Vector3 &scale)
+Matrix3x3 Matrix3x3::CreateScale(const Vector3 &scale)
 {
 	Matrix3x3 scaleMatrix;
-	for (int i = 0; i < 3; i++)
-	{
-		for (int j = 0; j < 3; j++)
-		{
-			scaleMatrix.data[i][j] = 0;
-		}
-	}
 	scaleMatrix.data[0][0] = scale.x;
 	scaleMatrix.data[1][1] = scale.y;
-	scaleMatrix.data[2][2] = scale.z;
+	scaleMatrix.data[2][2] = 1;
+	return scaleMatrix;
 }
 
 
-static Matrix3x3 CreateTranslation(const Vector3 &translation)
+Matrix3x3 Matrix3x3::CreateTranslation(const Vector3 &translation)
 {
-
+	Matrix3x3 translationMatrix;
+	translationMatrix.data[0][0] = 1;
+	translationMatrix.data[1][1] = 1;
+	translationMatrix.data[2][2] = 1;
+	translationMatrix.data[0][2] = translation.x;
+	translationMatrix.data[1][2] = translation.y;
+	return translationMatrix;
 }
 
 Matrix3x3 Matrix3x3::Transpose()
 {
 	Matrix3x3 original(*this);
-
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
@@ -216,7 +231,6 @@ Matrix3x3 Matrix3x3::Transpose()
 Matrix3x3 Matrix3x3::GetTranspose() const
 {
 	Matrix3x3 original(*this);
-
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)

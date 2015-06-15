@@ -1,7 +1,7 @@
 #pragma once
 #include "Vector3.h"
 
-//uses floating-point data in row-major right-handed form:
+//uses floating-point data in row-major right-handed form:
 class Matrix3x3
 {
 public:
@@ -33,9 +33,7 @@ public:
 	static Matrix3x3 CreateScale(const Vector3 &scale);
 	//builds and returns a new translation matrix
 	static Matrix3x3 CreateTranslation(const Vector3 &translation);
-
-
-
+	
 	//Transposes this and returns *this
 	Matrix3x3 Transpose();
 	//Builds and returns a new matrix that is this the transpose of this matrix

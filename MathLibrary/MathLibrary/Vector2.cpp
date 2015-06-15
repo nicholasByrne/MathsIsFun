@@ -113,7 +113,7 @@ float Vector2::MagnitudeSqrd()
 }
 
 
-void Vector2::NormaliseThis()
+Vector2 Vector2::NormaliseThis()
 {
 	float magnitude = Magnitude();
 	if (magnitude != 0)
@@ -121,6 +121,7 @@ void Vector2::NormaliseThis()
 		x /= magnitude;
 		y /= magnitude;
 	}
+	return *this;
 }
 
 
