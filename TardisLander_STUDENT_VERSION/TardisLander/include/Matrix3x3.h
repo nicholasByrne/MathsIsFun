@@ -7,6 +7,7 @@ class Matrix3x3
 {
 public:
 	Matrix3x3();
+	Matrix3x3(float val00, float val01, float val02, float val10, float val11, float val12, float val20, float val21, float val22);
 	~Matrix3x3();
 
 	//bool operator==(const Matrix3x3 &other) const;
@@ -17,12 +18,14 @@ public:
 	Matrix3x3 operator-(const Matrix3x3 &other) const;
 	Matrix3x3 operator*(const Matrix3x3 &other) const;
 	Vector3 operator*(const Vector3 &other) const;
+	//Vector3 operator *=?
 
-	void operator*=(Matrix3x3 &other);
+
+	Matrix3x3 operator*=(const Matrix3x3 &other);
 
 	Matrix3x3 operator-=(const Matrix3x3 &other);
 	Matrix3x3 operator+=(const Matrix3x3 &other);
-	Matrix3x3 operator*=(const Matrix3x3 &other);
+	//Matrix3x3 operator*=(const Matrix3x3 &other);
 
 	float operator()(unsigned int row, unsigned int col);
 
@@ -34,8 +37,7 @@ public:
 	static Matrix3x3 CreateScale(const Vector3 &scale);
 	//builds and returns a new translation matrix
 	static Matrix3x3 CreateTranslation(const Vector3 &translation);
-
-
+	
 
 	//Transposes this and returns *this
 	Matrix3x3 Transpose();

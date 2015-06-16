@@ -3,7 +3,9 @@
 
 Vector3::Vector3()
 {
-
+	x = 0;
+	y = 0;
+	z = 0;
 }
 
 
@@ -93,22 +95,22 @@ void Vector3::operator*=(float scalar)
 }
 
 
-Vector3 Vector3::operator/(Vector3 &other)
-{
-	Vector3 temp;
-	temp.x = x / other.x;
-	temp.y = y / other.y;
-	temp.z = z / other.z;
-	return temp;
-}
-
-
-void Vector3::operator/=(Vector3 &other)
-{
-	x = x / other.x;
-	y = y / other.y;
-	z = z / other.z;
-}
+//Vector3 Vector3::operator/(Vector3 &other)
+//{
+//	Vector3 temp;
+//	temp.x = x / other.x;
+//	temp.y = y / other.y;
+//	temp.z = z / other.z;
+//	return temp;
+//}
+//
+//
+//void Vector3::operator/=(Vector3 &other)
+//{
+//	x = x / other.x;
+//	y = y / other.y;
+//	z = z / other.z;
+//}
 
 
 float Vector3::Magnitude()
@@ -146,4 +148,20 @@ Vector3 Vector3::Normalise()
 		temp.z = z / magnitude;
 	}
 	return temp;
+}
+
+
+float Vector3::Dot(Vector3 vectorA, Vector3 vectorB)
+{
+	return ((vectorA.x * vectorB.x) + (vectorA.y * vectorB.y) + (vectorA.z * vectorB.z));
+}
+
+
+Vector3 Vector3::Cross(Vector3 &vectorA, Vector3 &vectorB)
+{
+	Vector3 result;
+	result.x = ((vectorA.y * vectorB.z) - (vectorA.z * vectorB.y));
+	result.y = ((vectorA.z * vectorB.x) - (vectorA.x * vectorB.z));
+	result.z = ((vectorA.x * vectorB.y) - (vectorA.y * vectorB.x));
+	return result;
 }

@@ -22,8 +22,8 @@ public:
 	Vector3 operator*(float scalar);
 	void operator*=(float scalar);
 
-	Vector3 operator/(Vector3 &other);
-	void operator/=(Vector3 &other);
+	//Vector3 operator/(Vector3 &other);
+	//void operator/=(Vector3 &other);
 
 	float Magnitude();
 	float MagnitudeSqrd();
@@ -31,7 +31,8 @@ public:
 	void NormaliseThis();
 	Vector3 Normalise(); //returns normalised version
 
-	Vector3 Cross(Vector3 &other, Vector3 &another);
+	static float Dot(Vector3 vectorA, Vector3 vectorB);
+	static Vector3 Cross(Vector3 &vectorA, Vector3 &vectorB);
 
 private:
 
