@@ -3,7 +3,10 @@
 
 Vector4::Vector4()
 {
-
+	x = 0;
+	y = 0;
+	z = 0;
+	w = 0;
 }
 
 
@@ -101,26 +104,6 @@ void Vector4::operator*=(float scalar)
 }
 
 
-Vector4 Vector4::operator/(Vector4 &other)
-{
-	Vector4 temp;
-	temp.x = x / other.x;
-	temp.y = y / other.y;
-	temp.z = z / other.z;
-	temp.w = w / other.w;
-	return temp;
-}
-
-
-void Vector4::operator/=(Vector4 &other)
-{
-	x = x / other.x;
-	y = y / other.y;
-	z = z / other.z;
-	w = w / other.w;
-}
-
-
 float Vector4::Magnitude()
 {
 	return sqrt((x * x) + (y * y) + (z * z) + (w * w));
@@ -159,4 +142,15 @@ Vector4 Vector4::Normalise()
 		//temp.w = w / magnitude;
 	}
 	return temp;
+}
+
+
+Vector4 Cross(Vector4 &vectorA, Vector4 &vectorB)
+{
+	Vector4 result;
+	result.x = ((vectorA.y * vectorB.z) - (vectorA.z * vectorB.y));
+	result.y = ((vectorA.z * vectorB.x) - (vectorA.x * vectorB.z));
+	result.z = ((vectorA.x * vectorB.y) - (vectorA.y * vectorB.x));
+	//result.w = 
+	return result;
 }

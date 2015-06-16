@@ -12,6 +12,21 @@ Matrix3x3::Matrix3x3()
 	}
 }
 
+
+Matrix3x3::Matrix3x3(float val00, float val01, float val02, float val10, float val11, float val12, float val20, float val21, float val22)
+{
+	data[0][0] = val00;
+	data[0][1] = val01;
+	data[0][2] = val02;
+	data[1][0] = val10;
+	data[1][1] = val11;
+	data[1][2] = val12;
+	data[2][0] = val20;
+	data[2][1] = val21;
+	data[2][2] = val22;
+}
+
+
 Matrix3x3::~Matrix3x3()
 {
 
@@ -92,20 +107,18 @@ Matrix3x3 Matrix3x3::operator-=(const Matrix3x3 &other)
 
 Matrix3x3 Matrix3x3::operator*(const Matrix3x3 &other) const
 {
-	Matrix3x3 matrix;
+	Matrix3x3 result;
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			float sum = 0;
 			for (int k = 0; k < 3; k++)
 			{
-				matrix.data[i][j] = (data[i][k] * other.data[k][j]);
+				result.data[i][j] += data[i][k] * other.data[k][j];
 			}
-			matrix.data[i][j] = sum;
 		}
 	}
-	return matrix;
+	return result;
 }
 
 
@@ -122,36 +135,28 @@ Vector3 Matrix3x3::operator*(const Vector3 &other) const
 
 Matrix3x3 Matrix3x3::operator*=(const Matrix3x3 &other)
 {
-	Matrix3x3 matrix;
+	Matrix3x3 result;
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			float sum = 0;
 			for (int k = 0; k < 3; k++)
 			{
-				matrix.data[i][j] = (data[i][k] * other.data[k][j]);
+				result.data[i][j] += data[i][k] * other.data[k][j];
 			}
-			matrix.data[i][j] = sum;
 		}
 	}
+
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			data[i][j] = matrix.data[i][j];
+			data[i][j] = result.data[i][j];
 		}
 	}
 	return *this;
 }
 
-//Matrix3x3 Matrix3x3::operator/(const Matrix3x3 &other) const
-//{
-//
-//}
-
-
-//void Matrix3x3::operator/*(Matrix3x3 &other);
 
 float Matrix3x3::operator()(unsigned int row, unsigned int col)
 {
@@ -189,6 +194,7 @@ Matrix3x3 Matrix3x3::CreateRotation(float radians)
 	rotationMatrix.data[0][1] = cos(radians + 90);
 	rotationMatrix.data[1][0] = sin(radians);
 	rotationMatrix.data[1][1] = sin(radians + 90);
+	rotationMatrix.data[2][2] = 1;
 	return rotationMatrix;
 }
 
@@ -239,4 +245,27 @@ Matrix3x3 Matrix3x3::GetTranspose() const
 		}
 	}
 	return original;
+}
+
+
+Matrix4x4 Matrix3x3::Mat4()
+{
+	Matrix4x4 mat4;
+	mat4.data[0][0] = data[0][0];
+	mat4.data[0][1] = data[0][1];
+	mat4.data[0][2] = 0;
+	mat4.data[0][3] = 0;
+	mat4.data[1][0] = data[1][0];
+	mat4.data[1][1] = data[1][1];
+	mat4.data[1][2] = 0;
+	mat4.data[1][3] = 0;
+	mat4.data[2][0] = 0;
+	mat4.data[2][1] = 0;
+	mat4.data[2][2] = 1;
+	mat4.data[2][3] = 0;
+	mat4.data[3][0] = data[2][0];
+	mat4.data[3][1] = data[2][1];
+	mat4.data[3][2] = 0;
+	mat4.data[3][3] = 1;
+	return mat4;
 }

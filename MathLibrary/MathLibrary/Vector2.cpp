@@ -3,7 +3,8 @@
 
 Vector2::Vector2()
 {
-
+	x = 0;
+	y = 0;
 }
 
 
@@ -85,22 +86,6 @@ void Vector2::operator*=(float scalar)
 }
 
 
-Vector2 Vector2::operator/(Vector2 &other)
-{
-	Vector2 temp;
-	temp.x = x / other.x;
-	temp.y = y / other.y;
-	return temp;
-}
-
-
-void Vector2::operator/=(Vector2 &other)
-{
-	x = x / other.x;
-	y = y / other.y;
-}
-
-
 float Vector2::Magnitude()
 {
 	return sqrt((x * x) + (y * y));
@@ -138,7 +123,7 @@ Vector2 Vector2::Normalise()
 }
 
 
-float Vector2::dot(Vector2 &other)
+float Vector2::Dot(Vector2 &vectorA, Vector2 &vectorB)
 {
-	return ((x * other.x) + (y * other.y));
+	return ((vectorA.x * vectorB.x) + (vectorA.y * vectorB.y));
 }

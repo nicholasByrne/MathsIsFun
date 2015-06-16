@@ -22,8 +22,6 @@ public:
 	Vector2 operator*(float scalar);
 	void operator*=(float scalar);
 
-	Vector2 operator/(Vector2 &other);
-	void operator/=(Vector2 &other);
 
 	float Magnitude();
 	float MagnitudeSqrd();
@@ -31,7 +29,7 @@ public:
 	Vector2 NormaliseThis(); //returns *this
 	Vector2 Normalise(); //returns normalised version
 
-	float dot(Vector2 &other);
+	static float Dot(Vector2 &vectorA, Vector2 &vectorB);
 
 private:
 
