@@ -23,8 +23,8 @@ public:
 	Vector2 operator*(float scalar);
 	void operator*=(float scalar);
 
-	Vector2 operator/(Vector2 &other);
-	void operator/=(Vector2 &other);
+	Vector2 operator/(float scalar);
+	void operator/=(float scalar);
 
 	float Magnitude();
 	float MagnitudeSqrd();

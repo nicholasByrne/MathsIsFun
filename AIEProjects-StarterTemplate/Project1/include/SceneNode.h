@@ -1,5 +1,6 @@
 #pragma once
 #include "Matrix3x3.h"
+
 class SceneNode
 {
 public:
@@ -11,7 +12,7 @@ public:
 	void RemoveChild(SceneNode * removeChild);
 	void UpdateTransforms();
 
-protected:
+private:
 	//list of children		//pointer to children?
 	SceneNode * m_children[10];
 	SceneNode * m_parent;

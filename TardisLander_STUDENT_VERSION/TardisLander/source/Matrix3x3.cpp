@@ -10,6 +10,7 @@ Matrix3x3::Matrix3x3()
 			data[i][j] = 0;
 		}
 	}
+	data[2][2] = 1;
 }
 
 
@@ -209,6 +210,16 @@ Matrix3x3 Matrix3x3::CreateScale(const Vector3 &scale)
 }
 
 
+Matrix3x3 Matrix3x3::CreateScale(float x_val, float y_val)
+{
+	Matrix3x3 scaleMatrix;
+	scaleMatrix.data[0][0] = x_val;
+	scaleMatrix.data[0][0] = y_val;
+	scaleMatrix.data[2][2] = 1;
+	return scaleMatrix;
+}
+
+
 Matrix3x3 Matrix3x3::CreateTranslation(const Vector3 &translation)
 {
 	Matrix3x3 translationMatrix;
@@ -219,6 +230,19 @@ Matrix3x3 Matrix3x3::CreateTranslation(const Vector3 &translation)
 	translationMatrix.data[1][2] = translation.y;
 	return translationMatrix;
 }
+
+
+Matrix3x3 Matrix3x3::CreateTranslation(float x_val, float y_val)
+{
+	Matrix3x3 translationMatrix;
+	translationMatrix.data[0][0] = 1;
+	translationMatrix.data[1][1] = 1;
+	translationMatrix.data[2][2] = 1;
+	translationMatrix.data[0][2] = x_val;
+	translationMatrix.data[1][2] = y_val;
+	return translationMatrix;
+}
+
 
 Matrix3x3 Matrix3x3::Transpose()
 {

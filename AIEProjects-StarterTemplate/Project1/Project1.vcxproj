@@ -86,23 +86,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\AABB.cpp" />
+    <ClCompile Include="source\Matrix3x3.cpp" />
+    <ClCompile Include="source\Matrix4x4.cpp" />
+    <ClCompile Include="source\SceneNode.cpp" />
+    <ClCompile Include="source\Scene.cpp" />
     <ClCompile Include="source\CollisionManager.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\BulletManager.cpp" />
-    <ClCompile Include="source\Entity.cpp" />
+    <ClCompile Include="source\GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\Player.cpp" />
     <ClCompile Include="source\Game1.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
+    <ClCompile Include="source\Vector3.cpp" />
+    <ClCompile Include="source\Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AABB.h" />
     <ClInclude Include="include\CollisionManager.h" />
     <ClInclude Include="include\Bullet.h" />
     <ClInclude Include="include\BulletManager.h" />
-    <ClInclude Include="include\Entity.h" />
+    <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\Game1.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\Vector2.h" />
+    <ClInclude Include="include\Vector3.h" />
+    <ClInclude Include="include\Scene.h" />
+    <ClInclude Include="include\SceneNode.h" />
+    <ClInclude Include="include\Matrix4x4.h" />
+    <ClInclude Include="include\Vector4.h" />
+    <ClInclude Include="include\Matrix3x3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,8 +2,11 @@
 #define __PLAYER_H__
 
 #include "Vector3.h"
+#include "SceneNode.h"
+#include "Sprite.h"
+#include "Matrix3x3.h"
 
-class Player
+class Player : SceneNode
 {
 public:
 	Player(void);
@@ -18,11 +21,10 @@ public:
 
 private:
 	int m_sprite;
-	int m_fireSprite;
+	Sprite* m_pFlame;
 	bool m_bFlameOn;
-	float m_rotation;
-	Vector3 m_position;
 	Vector3 m_velocity;
+	float m_rotation;
 	bool m_bIsDead;
 	bool m_bHasLanded;
 };

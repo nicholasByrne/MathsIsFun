@@ -10,6 +10,7 @@ Matrix4x4::Matrix4x4()
 			data[i][j] = 0;
 		}
 	}
+	data[3][3] = 1;
 }
 
 Matrix4x4::~Matrix4x4()
@@ -146,13 +147,6 @@ Matrix4x4 Matrix4x4::operator*=(const Matrix4x4 &other)
 	return *this;
 }
 
-//Matrix3x3 Matrix3x3::operator/(const Matrix3x3 &other) const
-//{
-//
-//}
-
-
-//void Matrix3x3::operator/*(Matrix3x3 &other);
 
 float Matrix4x4::operator()(unsigned int row, unsigned int col)
 {
@@ -206,6 +200,17 @@ Matrix4x4 Matrix4x4::CreateScale(const Vector4 &scale)
 }
 
 
+Matrix4x4 Matrix4x4::CreateScale(float x_val, float y_val, float z_val)
+{
+	Matrix4x4 scaleMatrix;
+	scaleMatrix.data[0][0] = x_val;
+	scaleMatrix.data[1][1] = y_val;
+	scaleMatrix.data[2][2] = z_val;
+	scaleMatrix.data[3][3] = 1;
+	return scaleMatrix;
+}
+
+
 Matrix4x4 Matrix4x4::CreateTranslation(const Vector4 &translation)
 {
 	Matrix4x4 translationMatrix;
@@ -216,6 +221,20 @@ Matrix4x4 Matrix4x4::CreateTranslation(const Vector4 &translation)
 	translationMatrix.data[0][3] = translation.x;
 	translationMatrix.data[1][3] = translation.y;
 	translationMatrix.data[2][3] = translation.z;
+	return translationMatrix;
+}
+
+
+Matrix4x4 Matrix4x4::CreateTranslation(float x_val, float y_val, float z_val)
+{
+	Matrix4x4 translationMatrix;
+	translationMatrix.data[0][0] = 1;
+	translationMatrix.data[1][1] = 1;
+	translationMatrix.data[2][2] = 1;
+	translationMatrix.data[3][3] = 1;
+	translationMatrix.data[0][3] = x_val;
+	translationMatrix.data[1][3] = y_val;
+	translationMatrix.data[2][3] = z_val;
 	return translationMatrix;
 }
 

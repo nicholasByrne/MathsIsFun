@@ -1,6 +1,8 @@
+#pragma once
 
-#include "Entity.h"
-class Player :	public Entity
+#include "GameObject.h"
+
+class Player : public GameObject
 {
 public:
 	Player();

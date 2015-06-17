@@ -35,15 +35,16 @@ public:
 	static Matrix3x3 CreateRotation(float radians);
 	//builds and returns a new scale matrix
 	static Matrix3x3 CreateScale(const Vector3 &scale);
+	static Matrix3x3 CreateScale(float x_val, float y_val);
 	//builds and returns a new translation matrix
 	static Matrix3x3 CreateTranslation(const Vector3 &translation);
+	static Matrix3x3 CreateTranslation(float x_val, float y_val);
 	
-
 	//Transposes this and returns *this
 	Matrix3x3 Transpose();
 	//Builds and returns a new matrix that is this the transpose of this matrix
 	Matrix3x3 GetTranspose() const;
-
+	//Convertts a Matrix3x3 into a Matrix4x4
 	Matrix4x4 Mat4();
 
 	float data[3][3];

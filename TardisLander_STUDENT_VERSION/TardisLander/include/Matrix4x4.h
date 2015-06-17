@@ -31,8 +31,10 @@ public:
 	static Matrix4x4 CreateRotation(float radians);
 	//builds and returns a new scale matrix
 	static Matrix4x4 CreateScale(const Vector4 &scale);
+	static Matrix4x4 CreateScale(float x_val, float y_val, float z_val);
 	//builds and returns a new translation matrix
 	static Matrix4x4 CreateTranslation(const Vector4 &translation);
+	static Matrix4x4 CreateTranslation(float x_val, float y_val, float z_val);
 
 	//Transposes this and returns *this
 	Matrix4x4 Transpose();

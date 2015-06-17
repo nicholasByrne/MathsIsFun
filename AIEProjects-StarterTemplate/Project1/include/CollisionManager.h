@@ -1,5 +1,5 @@
 #pragma once
-#include "Entity.h"
+#include "GameObject.h"
 
 class CollisionManager
 {
@@ -7,11 +7,11 @@ public:
 	CollisionManager();
 	~CollisionManager();
 
-	void AddEntity(Entity * entityToAdd);
+	void AddEntity(GameObject * entityToAdd);
 	void RemoveEntity();
 	void CheckCollision();
 	
 private:
-	Entity ** entityArray;
+	GameObject ** entityArray;
 };
 

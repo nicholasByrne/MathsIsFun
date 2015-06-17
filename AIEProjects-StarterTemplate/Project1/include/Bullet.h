@@ -1,10 +1,10 @@
 #pragma once
-#include "Entity.h"
+#include "GameObject.h"
 
 class SpriteBatch;
 class Texture;
 
-class Bullet :	public Entity
+class Bullet :	public GameObject
 {
 public:
 	Bullet();

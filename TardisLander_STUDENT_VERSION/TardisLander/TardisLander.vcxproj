@@ -88,6 +88,7 @@
     <ClCompile Include="source\Player.cpp" />
     <ClCompile Include="source\Vector3.cpp" />
     <ClCompile Include="source\Vector4.cpp" />
+    <ClCompile Include="source\Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\AIE.h" />
@@ -100,6 +101,7 @@
     <ClInclude Include="include\Vector4.h" />
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\SceneNode.h" />
+    <ClInclude Include="include\Sprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

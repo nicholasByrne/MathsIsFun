@@ -31,8 +31,10 @@ public:
 	static Matrix2x2 CreateRotation(float radians);
 	//builds and returns a new scale matrix
 	static Matrix2x2 CreateScale(const Vector2 &scale);
+	//									static Matrix4x4 CreateScale(float x_val, float y_val, float z_val);
 	//builds and returns a new translation matrix
 	static Matrix2x2 CreateTranslation(const Vector2 &translation);
+	//									static Matrix4x4 CreateScale(float x_val, float y_val, float z_val);
 
 	//Transposes this and returns *this
 	Matrix2x2 Transpose();
