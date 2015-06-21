@@ -86,7 +86,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\AABB.cpp" />
+    <ClCompile Include="source\Collider.cpp" />
+    <ClCompile Include="source\CollisionHandler.cpp" />
+    <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\Matrix3x3.cpp" />
     <ClCompile Include="source\Matrix4x4.cpp" />
     <ClCompile Include="source\SceneNode.cpp" />
@@ -104,11 +106,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\AABB.h" />
+    <ClInclude Include="include\Collider.h" />
+    <ClInclude Include="include\CollisionHandler.h" />
     <ClInclude Include="include\CollisionManager.h" />
     <ClInclude Include="include\Bullet.h" />
     <ClInclude Include="include\BulletManager.h" />
+    <ClInclude Include="include\Enemy.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\Game1.h" />
+    <ClInclude Include="include\Geometry.h" />
+    <ClInclude Include="include\MathUtility.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\Vector2.h" />
     <ClInclude Include="include\Vector3.h" />

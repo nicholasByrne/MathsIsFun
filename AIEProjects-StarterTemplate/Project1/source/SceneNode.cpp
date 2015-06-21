@@ -3,10 +3,13 @@
 
 SceneNode::SceneNode()
 {
+	m_parent = nullptr;
 	for (int i = 0; i < 10; i++)
 	{
 		m_children[i] = nullptr;
 	}
+	m_globalTransform = Matrix3x3::Identity();
+	m_localTransform = Matrix3x3::Identity();
 }
 
 
@@ -22,6 +25,12 @@ void SceneNode::SetParent(SceneNode * pNode)
 }
 
 
+SceneNode * SceneNode::GetParent()
+{
+	return m_parent;
+}
+
+
 void SceneNode::AddChild(SceneNode * pNode)
 {
 	for (int i = 0; i < 10; i++)
@@ -33,6 +42,17 @@ void SceneNode::AddChild(SceneNode * pNode)
 			break;
 		}
 	}
+}
+
+
+SceneNode * SceneNode::GetChild(int index)
+{
+	if (index >= 10)
+	{
+		return nullptr;
+	}
+	else
+		return m_children[index];
 }
 
 
@@ -69,4 +89,22 @@ void SceneNode::UpdateTransforms()
 			m_children[i]->UpdateTransforms();
 		}
 	}
+}
+
+
+Matrix3x3 SceneNode::GetGlobalTransform() const
+{
+	return m_globalTransform;
+}
+
+
+Matrix3x3 SceneNode::GetLocalTransform() const
+{
+	return m_localTransform;
+}
+
+
+void SceneNode::SetLocalTransform(const Matrix3x3& a_transform)
+{
+	m_localTransform = a_transform;
 }

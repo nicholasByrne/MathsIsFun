@@ -12,6 +12,7 @@ class SpriteBatch;
 #include "BulletManager.h"
 #include "Vector2.h"
 #include <cmath>
+#include "Player.h"
 
 class Game1 : public Application
 {
@@ -28,6 +29,7 @@ public:
 	virtual void Draw();
 
 	BulletManager * bulletManager;
+	//Player * player1;
 
 protected:
 
@@ -35,7 +37,7 @@ protected:
 	CollisionManager collisionManager;
 	Texture * m_playerTexture;
 	Texture * m_bulletTexture;
-	Vector2 playerPos;
+
 	Vector2 mousePos;
 	//float playerX, playerY;
 	//float crosshairX, crosshairY;
@@ -46,6 +48,8 @@ protected:
 	int *ypos = new int; //cursor
 	int *xpos = new int;
 	float angle;
+
+	Player * player1;
 private:
 };
 

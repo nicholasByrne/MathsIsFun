@@ -30,14 +30,8 @@
     <ClCompile Include="source\Vector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Player.cpp">
-      <Filter>Source Files\Game Object</Filter>
-    </ClCompile>
     <ClCompile Include="source\BulletManager.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Bullet.cpp">
-      <Filter>Source Files\Game Object</Filter>
     </ClCompile>
     <ClCompile Include="source\CollisionManager.cpp">
       <Filter>Source Files</Filter>
@@ -60,10 +54,22 @@
     <ClCompile Include="source\Matrix3x3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Player.cpp">
+      <Filter>Source Files\Game Object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Bullet.cpp">
+      <Filter>Source Files\Game Object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Enemy.cpp">
+      <Filter>Source Files\Game Object</Filter>
+    </ClCompile>
     <ClCompile Include="source\GameObject.cpp">
       <Filter>Source Files\Game Object</Filter>
     </ClCompile>
-    <ClCompile Include="source\AABB.cpp">
+    <ClCompile Include="source\Collider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CollisionHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,14 +80,8 @@
     <ClInclude Include="include\Vector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Bullet.h">
-      <Filter>Header Files\Game Object</Filter>
-    </ClInclude>
     <ClInclude Include="include\BulletManager.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Player.h">
-      <Filter>Header Files\Game Object</Filter>
     </ClInclude>
     <ClInclude Include="include\CollisionManager.h">
       <Filter>Header Files</Filter>
@@ -90,9 +90,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SceneNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Matrix4x4.h">
@@ -104,10 +101,34 @@
     <ClInclude Include="include\Matrix3x3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\AABB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SceneNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Player.h">
+      <Filter>Header Files\Game Object</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Bullet.h">
+      <Filter>Header Files\Game Object</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Enemy.h">
+      <Filter>Header Files\Game Object</Filter>
+    </ClInclude>
     <ClInclude Include="include\GameObject.h">
       <Filter>Header Files\Game Object</Filter>
     </ClInclude>
-    <ClInclude Include="include\AABB.h">
+    <ClInclude Include="include\Collider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CollisionHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Geometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MathUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

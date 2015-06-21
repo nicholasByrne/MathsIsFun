@@ -85,19 +85,19 @@ void Vector2::operator*=(float scalar)
 }
 
 
-Vector2 Vector2::operator/(Vector2 &other)
+Vector2 Vector2::operator/(float scalar)
 {
 	Vector2 temp;
-	temp.x = x / other.x;
-	temp.y = y / other.y;
+	temp.x = x / scalar;
+	temp.y = y / scalar;
 	return temp;
 }
 
 
-void Vector2::operator/=(Vector2 &other)
+void Vector2::operator/=(float scalar)
 {
-	x = x / other.x;
-	y = y / other.y;
+	x = x / scalar;
+	y = y / scalar;
 }
 
 
@@ -135,3 +135,22 @@ Vector2 Vector2::Normal()
 	}
 	return temp;
 }
+
+
+float Vector2::Dot(Vector2 vectorA, Vector2 vectorB)
+{
+	return ((vectorA.x * vectorB.x) + (vectorA.y * vectorB.y));
+}
+
+
+float Vector2::Distance(const Vector2& vectorA, const Vector2& vectorB)
+{
+	sqrt((x * x) + (y * y));
+}
+
+
+float Vector2::Angle(const Vector2& vectorA, const Vector2& vectorB)
+{
+
+}
+

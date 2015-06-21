@@ -32,6 +32,9 @@ public:
 	void Normalise();
 	Vector2 Normal(); //returns normalised version
 
+	static float Dot(Vector2 vectorA, Vector2 vectorB);
+	static float Distance(const Vector2& vectorA, const Vector2& vectorB);
+	static float Angle(const Vector2& vectorA, const Vector2& vectorB);
 
 private:
 
