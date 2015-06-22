@@ -116,8 +116,8 @@ bool CollisionHandler::CheckSATCollision(PolygonCollider * colliderA, PolygonCol
 		Vector2 axis = axes[i];
 
 		// project both shapes onto the axis
-		Vector2 proj1 = Project( polyA, axis.Normal() );
-		Vector2 proj2 = Project( polyB, axis.Normal() );
+		Vector2 proj1 = Project( polyA, axis.Normalise() );
+		Vector2 proj2 = Project( polyB, axis.Normalise() );
 
 		//minimum axis is our MTV
 
@@ -154,7 +154,7 @@ bool CollisionHandler::CheckSATCollision(PolygonCollider * colliderA, PolygonCol
 	if (indexOfMinAxis >= polyA.numPoints)
 		minOverlap *= -1.0f;
 
-	outMTV = axes[indexOfMinAxis].Normal() * minOverlap;
+	outMTV = axes[indexOfMinAxis].Normalise() * minOverlap;
 	return true;
 }
 
@@ -178,10 +178,10 @@ bool CollisionHandler::CheckSATPolygonCircleCollision(PolygonCollider * collider
 	// loop over the axes
 	for (int i = 0; i < numAxes; i++)
 	{
-		Vector2 axis = axes[i].Normal();
+		Vector2 axis = axes[i].Normalise();
 
 		// project both shapes onto the axis
-		Vector2 proj1 = Project(polyA, axis.Normal());
+		Vector2 proj1 = Project(polyA, axis.Normalise());
 		Vector2 proj2( axis.Dot(circleB.center) - circleB.radius, axis.Dot(circleB.center) + circleB.radius );
 
 		//minimum axis is our MTV
@@ -218,7 +218,7 @@ bool CollisionHandler::CheckSATPolygonCircleCollision(PolygonCollider * collider
 	if (indexOfMinAxis > polyA.numPoints)
 		minOverlap *= -1.0f;
 
-	outMTV = axes[indexOfMinAxis].Normal() * minOverlap;
+	outMTV = axes[indexOfMinAxis].Normalise() * minOverlap;
 	return true;
 
 }
@@ -263,6 +263,7 @@ void CollisionHandler::CalculateAxes( const Polygon2D& polyA, Vector2 * m_axes )
 void CollisionHandler::CalculateAxes(const Circle2D& circle, const Polygon2D& polyA, Vector2 * m_axes)
 {
 	int nearestPointIndex = 0;
+
 	float minDist = (circle.center - polyA.points[0]).MagnitudeSqrd();
 
 	// loop over the vertices

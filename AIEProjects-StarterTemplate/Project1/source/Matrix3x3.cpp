@@ -34,12 +34,6 @@ Matrix3x3::~Matrix3x3()
 }
 
 
-//bool Matrix3x3::operator==(const Matrix3x3 &other) const
-//{
-//
-//}
-
-
 void Matrix3x3::operator=(const Matrix3x3 &other)
 {
 	for (int i = 0; i < 3; i++)
@@ -129,6 +123,15 @@ Vector3 Matrix3x3::operator*(const Vector3 &other) const
 	result.x = (data[0][0] * other.x + data[0][1] * other.y + data[0][2] * other.z);
 	result.y = (data[1][0] * other.x + data[1][1] * other.y + data[1][2] * other.z);
 	result.z = (data[2][0] * other.x + data[2][1] * other.y + data[2][2] * other.z);
+	return result;
+}
+
+
+Vector2 Matrix3x3::operator*(const Vector2 &other) const
+{
+	Vector2 result;
+	result.x = (data[0][0] * other.x + data[0][1] * other.y);
+	result.y = (data[1][0] * other.x + data[1][1] * other.y);
 	return result;
 }
 

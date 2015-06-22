@@ -19,12 +19,6 @@ Matrix4x4::~Matrix4x4()
 }
 
 
-//bool Matrix3x3::operator==(const Matrix3x3 &other) const
-//{
-//
-//}
-
-
 void Matrix4x4::operator=(const Matrix4x4 &other)
 {
 	for (int i = 0; i < 4; i++)

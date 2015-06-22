@@ -44,7 +44,7 @@ void Vector4::operator=(Vector4 &other)
 }
 
 
-Vector4 Vector4::operator+(Vector4 &other)
+Vector4 Vector4::operator+(Vector4 &other) const
 {
 	Vector4 temp;
 	temp.x = x + other.x;
@@ -64,7 +64,7 @@ void Vector4::operator+=(Vector4 &other)
 }
 
 
-Vector4 Vector4::operator-(Vector4 &other)
+Vector4 Vector4::operator-(Vector4 &other) const
 {
 	Vector4 temp;
 	temp.x = x - other.x;
@@ -84,7 +84,7 @@ void Vector4::operator-=(Vector4 &other)
 }
 
 
-Vector4 Vector4::operator*(float scalar)
+Vector4 Vector4::operator*(float scalar) const
 {
 	Vector4 temp;
 	temp.x = x * scalar;
@@ -104,7 +104,7 @@ void Vector4::operator*=(float scalar)
 }
 
 
-Vector4 Vector4::operator/(Vector4 &other)
+Vector4 Vector4::operator/(Vector4 &other) const
 {
 	Vector4 temp;
 	temp.x = x / other.x;
@@ -136,7 +136,7 @@ float Vector4::MagnitudeSqrd()
 }
 
 
-Vector4 Vector4::NormaliseThis()
+void Vector4::NormaliseThis()
 {
 	float magnitude = Magnitude();
 	if (magnitude != 0)
@@ -146,7 +146,6 @@ Vector4 Vector4::NormaliseThis()
 		z /= magnitude;
 		//w /= magnitude;
 	}
-	return *this;
 }
 
 

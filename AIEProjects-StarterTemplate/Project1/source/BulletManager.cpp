@@ -93,19 +93,19 @@ void BulletManager::ClearBullets()
 
 bool BulletManager::BulletOutOfWindow(Bullet * bullet)
 {
-	if (bullet->position.x > windowWidth + 100) //RHS
+	if (bullet->m_position.x > windowWidth + 100) //RHS
 	{
 		return true;
 	}
-	else if (bullet->position.x < -100) //LHS
+	else if (bullet->m_position.x < -100) //LHS
 	{
 		return true;
 	}
-	else if (bullet->position.y > windowHeight + 100) //Bottom
+	else if (bullet->m_position.y > windowHeight + 100) //Bottom
 	{
 		return true;
 	}
-	else if (bullet->position.y < -100) //Top
+	else if (bullet->m_position.y < -100) //Top
 	{
 		return true;
 	}

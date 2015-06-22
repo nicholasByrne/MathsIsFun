@@ -2,11 +2,12 @@
 #include "Vector2.h"
 #include "SceneNode.h"
 #include "Collider.h"
+#include "Texture.h"
 
 class SpriteBatch;
 class Texture;
 
-class GameObject : SceneNode
+class GameObject : public SceneNode
 {
 public:
 	GameObject();

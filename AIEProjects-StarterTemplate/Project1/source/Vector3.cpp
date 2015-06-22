@@ -41,7 +41,7 @@ void Vector3::operator=(Vector3 &other)
 }
 
 
-Vector3 Vector3::operator+(Vector3 &other)
+Vector3 Vector3::operator+(Vector3 &other) const
 {
 	Vector3 temp;
 	temp.x = x + other.x;
@@ -59,7 +59,7 @@ void Vector3::operator+=(Vector3 &other)
 }
 
 
-Vector3 Vector3::operator-(Vector3 &other)
+Vector3 Vector3::operator-(Vector3 &other) const
 {
 	Vector3 temp;
 	temp.x = x - other.x;
@@ -77,7 +77,7 @@ void Vector3::operator-=(Vector3 &other)
 }
 
 
-Vector3 Vector3::operator*(float scalar)
+Vector3 Vector3::operator*(float scalar) const
 {
 	Vector3 temp;
 	temp.x = x * scalar;
@@ -95,6 +95,24 @@ void Vector3::operator*=(float scalar)
 }
 
 
+Vector3 Vector3::operator/(float scalar)
+{
+	Vector3 temp;
+	temp.x = x / scalar;
+	temp.y = y / scalar;
+	temp.z = z / scalar;
+	return temp;
+}
+
+
+void Vector3::operator/=(float scalar)
+{
+	x = x / scalar;
+	y = y / scalar;
+	z = z / scalar;
+}
+
+
 float Vector3::Magnitude()
 {
 	return sqrt((x * x) + (y * y) + (z * z));
@@ -107,7 +125,7 @@ float Vector3::MagnitudeSqrd()
 }
 
 
-Vector3 Vector3::NormaliseThis()
+void Vector3::NormaliseThis()
 {
 	float magnitude = Magnitude();
 	if (magnitude != 0)
@@ -116,7 +134,6 @@ Vector3 Vector3::NormaliseThis()
 		y /= magnitude;
 		z /= magnitude;
 	}
-	return *this;
 }
 
 
@@ -132,6 +149,29 @@ Vector3 Vector3::Normalise()
 	}
 	return temp;
 }
+
+
+float Vector3::Dot(Vector3 vectorB)
+{
+	return ((x *  vectorB.x) + (y + vectorB.y) + (z * vectorB.z));
+}
+
+
+Vector3 Vector3::Cross(Vector3 &vectorB)
+{
+	Vector3 result;
+	result.x = ((y * vectorB.z) - (z * vectorB.y));
+	result.y = ((z * vectorB.x) - (x * vectorB.z));
+	result.z = ((x * vectorB.y) - (y * vectorB.x));
+	return result;
+}
+
+
+//Vector3 Vector3::Perpindicular()
+//{
+//
+//}
+
 
 
 float Vector3::Dot(Vector3 vectorA, Vector3 vectorB)

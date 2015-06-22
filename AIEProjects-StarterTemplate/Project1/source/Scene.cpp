@@ -33,7 +33,7 @@ void Scene::AddGameObject(GameObject& a_gameObject)
 		if (gameObjectArray[i] == nullptr)
 		{
 			//add scenenode to hierarchy
-			a_gameObject.SetParent(*m_rootNode);
+			a_gameObject.SetParent(m_rootNode);
 		}
 	}
 }

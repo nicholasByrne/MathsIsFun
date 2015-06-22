@@ -4,6 +4,7 @@
 
 Bullet::Bullet()
 {
+	m_texture = nullptr;
 }
 
 Bullet::Bullet(Vector2 startingPosition, Vector2 targetPosition, float gunAngle, float bulletSpeed, Texture * bulletTexture)
@@ -36,5 +37,5 @@ void Bullet::Update(float deltaTime)
 
 void Bullet::Draw(SpriteBatch * m_spriteBatch)
 {
-	m_spriteBatch->DrawSprite(m_texture, m_position.x, m_position.y, m_texture.GetWidth()/10, m_texture->GetHeight()/10, m_rotation + 90);
+	m_spriteBatch->DrawSprite(m_texture, m_position.x, m_position.y, m_texture->GetWidth()/10, m_texture->GetHeight()/10, m_rotation + 90);
 }

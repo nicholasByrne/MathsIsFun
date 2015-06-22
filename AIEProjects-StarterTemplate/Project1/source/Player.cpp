@@ -1,6 +1,5 @@
 #include "Player.h"
 
-
 Player::Player()
 {
 
@@ -27,7 +26,7 @@ void Player::Update(float deltaTime)
 
 void Player::Draw(SpriteBatch * m_spriteBatch)
 {
-	m_spriteBatch->DrawSprite(m_texture, m_position.x, m_position.y, m_texture->GetWidth(), texture->GetHeight());
+	m_spriteBatch->DrawSprite(m_texture, m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight());
 }
 
 
