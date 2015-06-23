@@ -1,0 +1,58 @@
+﻿Build started 23/06/2015 2:09:20 PM.
+     1>Project "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\AIE_GL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\include\\" /I"C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\libraries\glew\include\\" /I"C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\libraries\glfw3\include\GLFW\\" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\\" /Fd"C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\Application.cpp source\Font.cpp source\Input.cpp source\lodepng.cpp source\RenderTexture.cpp source\SpriteBatch.cpp source\SpriteBatch_GL3.cpp source\Texture.cpp
+         Application.cpp
+     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\libraries\glfw3\include\GLFW\glfw3.h(95) : see previous definition of 'APIENTRY'
+         Font.cpp
+         Input.cpp
+     1>source\Input.cpp(34): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+         lodepng.cpp
+         RenderTexture.cpp
+         SpriteBatch.cpp
+     1>C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\include\SpriteBatch_GL3.h(144): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\include\SpriteBatch_GL3.h(150): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\include\SpriteBatch_GL3.h(156): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         SpriteBatch_GL3.cpp
+     1>C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\include\SpriteBatch_GL3.h(144): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\include\SpriteBatch_GL3.h(150): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\include\SpriteBatch_GL3.h(156): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(139): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(189): warning C4018: '<' : signed/unsigned mismatch
+     1>source\SpriteBatch_GL3.cpp(218): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(247): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(258): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(259): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(286): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(297): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(308): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(319): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(350): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(351): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(416): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(427): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(438): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(449): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>source\SpriteBatch_GL3.cpp(565): warning C4018: '<=' : signed/unsigned mismatch
+     1>source\SpriteBatch_GL3.cpp(583): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+         Texture.cpp
+     1>source\Texture.cpp(67): warning C4018: '<' : signed/unsigned mismatch
+     1>source\Texture.cpp(73): warning C4018: '<' : signed/unsigned mismatch
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\bin\AIE_GL.lib" OpenGL32.lib glew32.lib glfw3.lib /LIBPATH:"C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\libraries\glew\lib\Release\Win32\\" /LIBPATH:"C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\libraries\glfw3\lib-vc2013\\" /NOLOGO /LTCG "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\Application.obj"
+         "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\Font.obj"
+         "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\Input.obj"
+         "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\lodepng.obj"
+         "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\RenderTexture.obj"
+         "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\SpriteBatch.obj"
+         "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\SpriteBatch_GL3.obj"
+         "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\CompilerJunk\AIE_GLRelease\Texture.obj"
+     1>glew32.lib(glew32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in OpenGL32.lib(OPENGL32.dll); second definition ignored
+         AIE_GL.vcxproj -> C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\bin\AIE_GL.lib
+     1>Done Building Project "C:\Users\TEMP\Documents\Visual Studio 2013\Projects\AIEProjects-StarterTemplate\AIE_GL\AIE_GL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.76

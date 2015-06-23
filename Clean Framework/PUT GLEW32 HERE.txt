@@ -1,0 +1,2 @@
+AIEProjects-StarterTemplate\Compiled\Project1Release
+AIEProjects-StarterTemplate\Compiled\Project1Debug
