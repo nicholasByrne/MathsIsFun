@@ -4,21 +4,21 @@ Graph::Graph()
 {
 	for (int i = 0; i < 10; i++)
 	{
-		a_nodeArray[i] = nullptr;
+		a_nodeVector[i] = nullptr;
 	}
 }
 
 Graph::~Graph()
 {
-	delete[] a_nodeArray;
+	//delete[] a_nodeArray;
 }
 
 
 void Graph::RemoveNode(node * toRemove)
 {
-	for (int i = 0; i < 10; i++)
+	for (; iter < a_nodeVector.end(); iter++)
 	{
-		a_nodeArray[i]->RemoveEdge(toRemove);
+		a_nodeVector[iter]->RemoveEdge(toRemove);
 	}
 
 	delete toRemove;
@@ -28,7 +28,7 @@ void Graph::RemoveNode(node * toRemove)
 
 void Graph::AddNode(float x, float y)
 {
-	for (int i = 0; i < 10; i++)
+	for (; iter < a_nodeVector.end(); iter++)
 	{
 		if (a_nodeArray[i] == nullptr)
 		{

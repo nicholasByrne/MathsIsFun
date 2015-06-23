@@ -1,25 +1,23 @@
-﻿Build started 23/06/2015 4:10:01 PM.
-     1>Project "C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\Project1\Project1.vcxproj" on node 2 (Build target(s)).
+﻿Build started 23/06/2015 5:01:29 PM.
+     1>Project "C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\Project1\Project1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\AIE_GL\include\\" /I"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\libraries\glfw3\include\GLFW\\" /I"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\libraries\glew\include\\" /I"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\Project1\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\\" /Fd"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp source\Edge.cpp source\Game1.cpp source\Graph.cpp source\Node.cpp
-         Node.cpp
-     1>c:\users\nicholas.byrne\desktop\workspace\trunk\graphs\aieprojects-startertemplate\project1\source\node.cpp(32): warning C4154: deletion of an array expression; conversion to pointer supplied
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\AIE_GL\include\\" /I"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\libraries\glfw3\include\GLFW\\" /I"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\libraries\glew\include\\" /I"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\Project1\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\\" /Fd"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp source\Game1.cpp source\Graph.cpp
          Graph.cpp
-     1>c:\users\nicholas.byrne\desktop\workspace\trunk\graphs\aieprojects-startertemplate\project1\source\graph.cpp(13): warning C4154: deletion of an array expression; conversion to pointer supplied
+         Generating Code...
+         Compiling...
          Game1.cpp
-         Edge.cpp
          main.cpp
          Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\Compiled\Project1Debug\Project1.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\AIE_GL\bin\\" /LIBPATH:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\libraries\glew\lib\Release\Win32\\" /LIBPATH:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\libraries\glfw3\lib-vc2013\\" OpenGL32.lib AIE_GL_d.lib glew32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\Compiled\Project1Debug\Project1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\Compiled\Project1Debug\Project1.lib" /MACHINE:X86 "C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\main.obj"
-         "C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\Edge.obj"
-         "C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\Game1.obj"
-         "C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\Graph.obj"
-         "C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\Node.obj"
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\Compiled\Project1Debug\Project1.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\AIE_GL\bin\\" /LIBPATH:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\libraries\glew\lib\Release\Win32\\" /LIBPATH:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\libraries\glfw3\lib-vc2013\\" OpenGL32.lib AIE_GL_d.lib glew32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\Compiled\Project1Debug\Project1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\Compiled\Project1Debug\Project1.lib" /MACHINE:X86 "C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\main.obj"
+         "C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\Edge.obj"
+         "C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\Game1.obj"
+         "C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\Graph.obj"
+         "C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\CompilerJunk\Project1Debug\Node.obj"
      1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         Project1.vcxproj -> C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\Compiled\Project1Debug\Project1.exe
-     1>Done Building Project "C:\Users\nicholas.byrne\Desktop\workspace\trunk\Graphs\AIEProjects-StarterTemplate\Project1\Project1.vcxproj" (Build target(s)).
+         Project1.vcxproj -> C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\Compiled\Project1Debug\Project1.exe
+     1>Done Building Project "C:\Users\nicholas.byrne\Desktop\workspace\trunk\AI\Graphs\AIEProjects-StarterTemplate\Project1\Project1.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.71
+Time Elapsed 00:00:00.88
