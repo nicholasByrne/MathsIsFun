@@ -2,17 +2,18 @@
 #define EDGE_H
 
 class Vector2;
-class node;
+class Node;
 class SpriteBatch;
 
 class Edge
 {
 public:
 	Edge();
+	Edge(Node * start, Node * end, int a_cost);
 	~Edge();
 
-	node * startNode;
-	node * endNode;
+	Node * startNode;
+	Node * endNode;
 	int cost;
 
 	

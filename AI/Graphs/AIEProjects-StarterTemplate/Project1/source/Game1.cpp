@@ -13,8 +13,8 @@ Game1::Game1(unsigned int windowWidth, unsigned int windowHeight, bool fullscree
 	myGraph->AddNode(250, 40);
 	myGraph->AddNode(100, 350);
 
-	myGraph->a_nodeArray[0]->InsertEdge(myGraph->a_nodeArray[1], 10);
-	myGraph->a_nodeArray[1]->InsertEdge(myGraph->a_nodeArray[2], 10);
+	myGraph->a_nodeVector[0]->InsertEdge(myGraph->a_nodeVector[1], 10);
+	myGraph->a_nodeVector[1]->InsertEdge(myGraph->a_nodeVector[2], 10);
 
 }
 
@@ -37,23 +37,10 @@ void Game1::Draw()
 	m_spritebatch->Begin();
 
 	// TODO: draw stuff.
-	
-	for (int i = 0; i < 10; i++)
-	{
-		if (myGraph->a_nodeArray[i] != nullptr)
-			myGraph->DrawCircle(*m_spritebatch, myGraph->a_nodeArray[i]->position, 10.0f);
-	}
 
-	for (int i = 0; i < 10; i++)
-	{
-		if (myGraph->a_nodeArray[i] != nullptr)
-		{
-			for (int j = 0; j < 10; j++)
-			{
-				myGraph->a_nodeArray[i]->DrawEdge(*m_spritebatch, myGraph->a_nodeArray[i]->nodeEdges[j], 10);
-			}
-		}
-	}
+	myGraph->DrawCircleAll(*m_spritebatch, 10.0f);
+	myGraph->DrawEdgeAll(*m_spritebatch, 10);
+
 
 	m_spritebatch->End();
 

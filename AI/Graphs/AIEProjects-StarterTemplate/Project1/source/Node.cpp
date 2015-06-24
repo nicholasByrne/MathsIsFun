@@ -1,71 +1,75 @@
 #include "Node.h"
 #include "SpriteBatch.h"
 
-node::node()
+Node::Node()
 {
 	position.x = 0.0f;
 	position.y = 0.0f;
-
-
-
-	for (int i = 0; i < 10; i++)
-	{
-		nodeEdges[i] = nullptr;
-	}
+	nodeEdges.reserve(10);
+	iter = nodeEdges.begin();
 }
 
 
-node::node(float a_x, float a_y)
+Node::Node(float a_x, float a_y)
 {
 	position.x = a_x;
-	position.y = a_y;
-
-	for (int i = 0; i < 10; i++)
-	{
-		nodeEdges[i] = nullptr;
-	}
+	position.y = a_y;		
+	nodeEdges.reserve(10);
+	iter = nodeEdges.begin();
 }
 
 
-node::~node()
+Node::~Node()
 {
-	delete[] nodeEdges;
+	//delete[] nodeEdges;
 }
 
 
-void node::InsertEdge(node * end, int a_cost)
+void Node::InsertEdge(Node * end, int a_cost)
 {
-	for (int i = 0; i < 10; i++)
+	//for (; iter < nodeEdges.end(); iter++)
+	//{
+	//	if (*iter == nullptr)
+	//	{
+	//		*iter = new Edge();
+	//		(*iter)->startNode = this;
+	//		(*iter)->endNode = end;
+	//		(*iter)->cost = a_cost;
+	//		return; 
+	//	}
+	//}
+	
+	nodeEdges.push_back(new Edge(this, end, a_cost));
+}
+
+
+void Node::RemoveEdge(Node * toRemove)
+{
+	for (iter = nodeEdges.begin(); iter != nodeEdges.end(); iter++)
 	{
-		if (nodeEdges[i] == nullptr)
+		if ((*iter)->endNode == toRemove)
 		{
-			nodeEdges[i] = new Edge();
-			nodeEdges[i]->startNode = this;
-			nodeEdges[i]->endNode = end;
-			nodeEdges[i]->cost = a_cost;
-			return; 
+			delete *iter;
+			*iter = nullptr;
 		}
 	}
 }
 
-
-void node::RemoveEdge(node * toRemove)
-{
-	for (int i = 0; i < 10; i++)
-	{
-		if (nodeEdges[i]->endNode == toRemove)
-		{
-			delete nodeEdges[i];
-			nodeEdges[i] = nullptr;
-		}
-	}
-}
-
-void node::DrawEdge(SpriteBatch & a_spriteBatch, Edge * edge, float thickness)
+void Node::DrawEdge(SpriteBatch & a_spriteBatch, Edge * edge, float thickness)
 {
 	if (edge != nullptr)
 		a_spriteBatch.DrawLine(edge->startNode->position.x, edge->startNode->position.y, edge->endNode->position.x, edge->endNode->position.y, 2.0f);
 }
+
+
+void Node::DrawEdgeAll(SpriteBatch & a_spriteBatch, float thickness)
+{
+	for (iter = nodeEdges.begin(); iter != nodeEdges.end(); iter++)
+	{
+		DrawEdge(a_spriteBatch, *iter, thickness);
+	}
+}
+
 
 
 Vector2::Vector2()

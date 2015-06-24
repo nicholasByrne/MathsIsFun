@@ -2,10 +2,8 @@
 #include <math.h>
 Graph::Graph()
 {
-	for (int i = 0; i < 10; i++)
-	{
-		a_nodeVector[i] = nullptr;
-	}
+	a_nodeVector.reserve(10);
+	iter = a_nodeVector.begin();
 }
 
 Graph::~Graph()
@@ -14,11 +12,11 @@ Graph::~Graph()
 }
 
 
-void Graph::RemoveNode(node * toRemove)
+void Graph::RemoveNode(Node * toRemove)
 {
-	for (; iter < a_nodeVector.end(); iter++)
+	for (iter = a_nodeVector.begin(); iter != a_nodeVector.end(); iter++)
 	{
-		a_nodeVector[iter]->RemoveEdge(toRemove);
+		(*iter)->RemoveEdge(toRemove);	
 	}
 
 	delete toRemove;
@@ -28,14 +26,15 @@ void Graph::RemoveNode(node * toRemove)
 
 void Graph::AddNode(float x, float y)
 {
-	for (; iter < a_nodeVector.end(); iter++)
-	{
-		if (a_nodeArray[i] == nullptr)
-		{
-			a_nodeArray[i] = new node(x, y);
-			return;
-		}
-	}
+	a_nodeVector.push_back(new Node(x, y));
+	//for (; iter < a_nodeVector.end(); iter++)
+	//{
+	//	if (*iter == nullptr)
+	//	{
+	//		*iter = new node(x, y);
+	//		return;
+	//	}
+	//}
 }
 
 
@@ -55,3 +54,25 @@ void Graph::DrawCircle(SpriteBatch& a_spriteBatch, Vector2 pos, float radius)
 		oldPos = newPos;
 	}
 }
+
+
+void Graph::DrawCircleAll(SpriteBatch& a_spriteBatch, float radius)
+{
+	for (iter = a_nodeVector.begin(); iter != a_nodeVector.end(); iter++)
+	{
+		if (*iter != nullptr)
+			DrawCircle(a_spriteBatch, (*iter)->position, radius);
+	}
+}
+
+
+void Graph::DrawEdgeAll(SpriteBatch & a_spriteBatch, float thickness)
+{
+	for (iter = a_nodeVector.begin(); iter != a_nodeVector.end(); iter++)
+	{
+		if (*iter != nullptr)
+			(*iter)->DrawEdgeAll(a_spriteBatch, thickness);
+	}
+}
+
+

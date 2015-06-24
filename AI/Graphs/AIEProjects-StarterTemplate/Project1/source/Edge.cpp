@@ -10,6 +10,14 @@ Edge::Edge()
 }
 
 
+Edge::Edge(Node * start, Node * end, int a_cost)
+{
+	startNode = start;
+	endNode = end;
+	cost = a_cost;
+}
+
+
 Edge::~Edge()
 {
 

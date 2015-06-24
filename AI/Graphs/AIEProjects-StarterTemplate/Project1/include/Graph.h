@@ -12,14 +12,17 @@ public:
 
 	//node * a_nodeArray[10];
 
-	std::vector<node*> a_nodeVector;
-	std::vector<node*>::iterator iter = a_nodeVector.begin();
+	std::vector<Node*> a_nodeVector;
+	std::vector<Node*>::iterator iter;
 
-	void RemoveNode(node * toRemove);
+	void RemoveNode(Node * toRemove);
 	void AddNode(float x, float y);
 
 	void DrawCircle(SpriteBatch& a_spriteBatch, Vector2 pos, float radius);
-	
+	void DrawCircleAll(SpriteBatch& a_spriteBatch, float radius);
+	void DrawEdgeAll(SpriteBatch & a_spriteBatch, float thickness);
+
+
 private:
 
 };
