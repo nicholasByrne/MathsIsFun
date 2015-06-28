@@ -21,12 +21,15 @@ public:
 	virtual void Update(float deltaTime);
 	virtual void Draw(SpriteBatch * m_spriteBatch);
 
-	CollisionCircle collisionCircle;
+	//CollisionCircle collisionCircle;
+
+	Matrix3x3 localMatrix;
 
 	Vector2 m_position;
 	Vector2 m_velocity;
 	Vector2 m_scale;
 	float m_rotation;
+	float m_radius;
 	void Translate(Vector2 & translation);
 
 	Texture * m_texture;

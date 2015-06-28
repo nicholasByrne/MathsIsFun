@@ -86,6 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Rock.cpp" />
     <ClCompile Include="source\CollisionCircle.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\Matrix3x3.cpp" />
@@ -121,6 +122,7 @@
     <ClInclude Include="include\Matrix4x4.h" />
     <ClInclude Include="include\Vector4.h" />
     <ClInclude Include="include\Matrix3x3.h" />
+    <ClInclude Include="include\Rock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
