@@ -87,6 +87,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\Rock.cpp" />
+    <ClCompile Include="source\Rock.cpp" />
     <ClCompile Include="source\CollisionCircle.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\Matrix3x3.cpp" />
@@ -103,6 +104,8 @@
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\Vector3.cpp" />
     <ClCompile Include="source\Vector4.cpp" />
+    <ClCompile Include="source\Tank.cpp" />
+    <ClCompile Include="source\TankTurret.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\CollisionCircle.h" />
@@ -123,6 +126,9 @@
     <ClInclude Include="include\Vector4.h" />
     <ClInclude Include="include\Matrix3x3.h" />
     <ClInclude Include="include\Rock.h" />
+    <ClInclude Include="include\Rock.h" />
+    <ClInclude Include="include\Tank.h" />
+    <ClInclude Include="include\TankTurret.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

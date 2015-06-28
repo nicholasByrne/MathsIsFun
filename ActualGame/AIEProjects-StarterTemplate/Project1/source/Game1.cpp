@@ -38,8 +38,7 @@ Game1::~Game1()
 
 void Game1::Update(float deltaTime)
 {
-	
-	//movement of player
+	//Get && store mouse position
 	GetInput()->GetMouseXY(xpos, ypos);
 	mousePos.x = *xpos;
 	mousePos.y = *ypos;
@@ -60,16 +59,6 @@ void Game1::Update(float deltaTime)
 	if (GetInput()->IsKeyDown(GLFW_KEY_D))
 	{
 		player1->MoveEast(deltaTime);
-	}
-	//
-	if (GetInput()->IsKeyDown(GLFW_KEY_E))
-	{
-		player1->m_rotation += (10 * deltaTime);
-	}
-	if (GetInput()->IsKeyDown(GLFW_KEY_Q))
-	{
-		//playerRotate -= 10 * deltaTime;
-		player1->m_rotation -= (10 * deltaTime);
 	}
 
 	if (GetInput()->IsMouseButtonDown(GLFW_MOUSE_BUTTON_LEFT))

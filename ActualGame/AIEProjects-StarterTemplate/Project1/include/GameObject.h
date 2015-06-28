@@ -23,7 +23,7 @@ public:
 
 	//CollisionCircle collisionCircle;
 
-	Matrix3x3 localMatrix;
+	//Matrix3x3 localMatrix;
 
 	Vector2 m_position;
 	Vector2 m_velocity;

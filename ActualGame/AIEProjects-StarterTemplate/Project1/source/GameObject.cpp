@@ -23,11 +23,11 @@ void GameObject::Update(float deltaTime)
 
 
 	UpdateMatrix();
-
-
 }
 
 //m_spritebatch->DrawSpriteTransformed3x3(m_texture, &localMatrix.m[0]);
+//m_spriteBatch->DrawSpriteTransformed3x3(m_texture, m_localTransform.data[0]);
+
 //m_spritebatch->DrawSpriteTransformed3x3(m_texture, &(localMatrix * localMatrix2).m[0]); 
 
 void GameObject::Draw(SpriteBatch * m_spriteBatch)
