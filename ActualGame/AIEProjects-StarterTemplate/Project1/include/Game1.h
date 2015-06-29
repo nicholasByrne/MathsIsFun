@@ -13,6 +13,9 @@ class SpriteBatch;
 #include "Vector2.h"
 #include <cmath>
 #include "Player.h"
+#include "Rock.h"
+#include "Tank.h"
+#include "TankTurret.h"
 
 class Game1 : public Application
 {
@@ -29,7 +32,6 @@ public:
 	virtual void Draw();
 
 	BulletManager * bulletManager;
-	//Player * player1;
 
 protected:
 
@@ -37,10 +39,11 @@ protected:
 	CollisionManager collisionManager;
 	Texture * m_playerTexture;
 	Texture * m_bulletTexture;
+	//Texture * m_tankTexture;
+	Texture * m_tankTurretTexture;
 
 	Vector2 mousePos;
-	//float playerX, playerY;
-	//float crosshairX, crosshairY;
+	
 	float playerRotate;
 	float playerGunAngle;
 
@@ -50,6 +53,15 @@ protected:
 	float angle;
 
 	Player * player1;
+	Tank * tank1;
+	Tank * tank2;
+	Tank * tank3;
+	Tank * tank4;
+	TankTurret * tank1Turret;
+	TankTurret * tank2Turret;
+	TankTurret * tank3Turret;
+	TankTurret * tank4Turret;
+
 private:
 };
 

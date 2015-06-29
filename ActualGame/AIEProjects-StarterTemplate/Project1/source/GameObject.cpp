@@ -2,7 +2,9 @@
 
 GameObject::GameObject()
 {
-
+	m_position = Vector2();
+	m_rotation = 0.f;
+	m_scale = Vector2();
 }
 
 

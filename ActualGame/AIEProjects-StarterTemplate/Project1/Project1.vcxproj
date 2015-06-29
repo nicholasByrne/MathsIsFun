@@ -87,7 +87,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\Rock.cpp" />
-    <ClCompile Include="source\Rock.cpp" />
     <ClCompile Include="source\CollisionCircle.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\Matrix3x3.cpp" />
@@ -109,14 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\CollisionCircle.h" />
-    <ClInclude Include="include\AABB.h" />
     <ClInclude Include="include\CollisionManager.h" />
     <ClInclude Include="include\Bullet.h" />
     <ClInclude Include="include\BulletManager.h" />
     <ClInclude Include="include\Enemy.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\Game1.h" />
-    <ClInclude Include="include\Geometry.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\Vector2.h" />
     <ClInclude Include="include\Vector3.h" />
@@ -125,7 +122,6 @@
     <ClInclude Include="include\Matrix4x4.h" />
     <ClInclude Include="include\Vector4.h" />
     <ClInclude Include="include\Matrix3x3.h" />
-    <ClInclude Include="include\Rock.h" />
     <ClInclude Include="include\Rock.h" />
     <ClInclude Include="include\Tank.h" />
     <ClInclude Include="include\TankTurret.h" />

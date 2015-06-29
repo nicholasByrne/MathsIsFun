@@ -107,12 +107,24 @@ Matrix3x3 Matrix3x3::operator*(const Matrix3x3 &other) const
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			for (int k = 0; k < 3; k++)
-			{
-				result.data[i][j] += data[i][k] * other.data[k][j];
-			}
+			Vector3 row(data[i][0], data[i][1], data[i][2]);
+			Vector3 column(other.data[0][j], other.data[1][j], other.data[2][j]);
+			result.data[i][j] = row.Dot(column);
 		}
 	}
+/*
+	result.data[0][0] = data[0][0] * other.data[0][0] + data[1][0] * other.data[0][1] + data[2][0] * other.data[0][2];
+	result.data[1][0] = data[0][0] * other.data[1][0] + data[1][0] * other.data[1][1] + data[2][0] * other.data[1][2];
+	result.data[2][0] = data[0][0] * other.data[2][0] + data[1][0] * other.data[2][1] + data[2][0] * other.data[2][2];
+
+	result.data[0][1] = data[0][1] * other.data[0][0] + data[1][1] * other.data[0][1] + data[2][1] * other.data[0][2];
+	result.data[1][1] = data[0][1] * other.data[1][0] + data[1][1] * other.data[1][1] + data[2][1] * other.data[1][2];
+	result.data[2][1] = data[0][1] * other.data[2][0] + data[1][1] * other.data[2][1] + data[2][1] * other.data[2][2];
+
+	result.data[0][2] = data[0][2] * other.data[0][0] + data[1][2] * other.data[0][1] + data[2][2] * other.data[0][2];
+	result.data[1][2] = data[0][2] * other.data[1][0] + data[1][2] * other.data[1][1] + data[2][2] * other.data[1][2];
+	result.data[2][2] = data[0][2] * other.data[2][0] + data[1][2] * other.data[2][1] + data[2][2] * other.data[2][2];
+*/
 	return result;
 }
 
@@ -195,9 +207,9 @@ Matrix3x3 Matrix3x3::CreateRotation(float radians)
 {
 	Matrix3x3 rotationMatrix;
 	rotationMatrix.data[0][0] = cos(radians);
-	rotationMatrix.data[0][1] = cos(radians + 90);
+	rotationMatrix.data[0][1] = -sin(radians);
 	rotationMatrix.data[1][0] = sin(radians);
-	rotationMatrix.data[1][1] = sin(radians + 90);
+	rotationMatrix.data[1][1] = cos(radians);
 	rotationMatrix.data[2][2] = 1;
 	return rotationMatrix;
 }
@@ -217,7 +229,7 @@ Matrix3x3 Matrix3x3::CreateScale(float x_val, float y_val)
 {
 	Matrix3x3 scaleMatrix;
 	scaleMatrix.data[0][0] = x_val;
-	scaleMatrix.data[0][0] = y_val;
+	scaleMatrix.data[1][1] = y_val;
 	scaleMatrix.data[2][2] = 1;
 	return scaleMatrix;
 }

@@ -153,7 +153,7 @@ Vector3 Vector3::Normalise()
 
 float Vector3::Dot(Vector3 vectorB)
 {
-	return ((x *  vectorB.x) + (y + vectorB.y) + (z * vectorB.z));
+	return ((x *  vectorB.x) + (y * vectorB.y) + (z * vectorB.z));
 }
 
 
@@ -187,4 +187,10 @@ Vector3 Vector3::Cross(Vector3 &vectorA, Vector3 &vectorB)
 	result.y = ((vectorA.z * vectorB.x) - (vectorA.x * vectorB.z));
 	result.z = ((vectorA.x * vectorB.y) - (vectorA.y * vectorB.x));
 	return result;
+}
+
+
+Vector3 operator*(float lhs, Vector3 &rhs)
+{
+	return rhs * lhs;
 }

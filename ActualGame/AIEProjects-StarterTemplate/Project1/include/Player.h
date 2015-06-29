@@ -13,6 +13,7 @@ public:
 
 	virtual void Update(float deltaTime);
 	virtual void Draw(SpriteBatch * m_spriteBatch);
+	void OnCollision(GameObject& other);
 
 	void MoveNorth(float deltaTime);
 	void MoveEast(float deltaTime);

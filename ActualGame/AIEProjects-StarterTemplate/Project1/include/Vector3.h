@@ -40,7 +40,12 @@ public:
 	static Vector3 Cross(Vector3 &vectorA, Vector3 &vectorB);
 	static float Distance(Vector3& vectorA, Vector3& vectorB);
 	static float Angle(const Vector3& vectorA, const Vector3& vectorB);
-
 private:
 
+
+
+
 };
+
+Vector3 operator*(float lhs, Vector3 &rhs);
+

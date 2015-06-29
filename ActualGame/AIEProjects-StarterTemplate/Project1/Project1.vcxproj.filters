@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Game Object">
-      <UniqueIdentifier>{57190e4b-e370-4428-a2f9-99ccd03077d0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Game Object">
-      <UniqueIdentifier>{86f551b6-6049-4580-92bd-b440e3439558}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -54,18 +48,6 @@
     <ClCompile Include="source\Matrix3x3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Player.cpp">
-      <Filter>Source Files\Game Object</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Bullet.cpp">
-      <Filter>Source Files\Game Object</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Enemy.cpp">
-      <Filter>Source Files\Game Object</Filter>
-    </ClCompile>
-    <ClCompile Include="source\GameObject.cpp">
-      <Filter>Source Files\Game Object</Filter>
-    </ClCompile>
     <ClCompile Include="source\CollisionCircle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -79,6 +61,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\TankTurret.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -110,25 +104,7 @@
     <ClInclude Include="include\Matrix3x3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\AABB.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\SceneNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Player.h">
-      <Filter>Header Files\Game Object</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Bullet.h">
-      <Filter>Header Files\Game Object</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Enemy.h">
-      <Filter>Header Files\Game Object</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GameObject.h">
-      <Filter>Header Files\Game Object</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Geometry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\CollisionCircle.h">
@@ -144,6 +120,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\TankTurret.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

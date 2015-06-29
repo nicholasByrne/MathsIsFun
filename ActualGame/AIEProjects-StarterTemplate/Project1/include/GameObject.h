@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include "SpriteBatch.h"
 #include "CollisionCircle.h"
+#include <string>
 
 class SpriteBatch;
 class Texture;
@@ -25,6 +26,7 @@ public:
 
 	//Matrix3x3 localMatrix;
 
+	std::string tag;
 	Vector2 m_position;
 	Vector2 m_velocity;
 	Vector2 m_scale;

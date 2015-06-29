@@ -2,7 +2,7 @@
 #include "Vector4.h"
 #include "Vector3.h"
 
-//uses floating-point data in row-major right-handed form:
+//uses floating-point data in column-major right-handed form:
 class Matrix4x4
 {
 public:
