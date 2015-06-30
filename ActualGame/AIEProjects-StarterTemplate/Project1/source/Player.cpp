@@ -3,14 +3,16 @@
 
 Player::Player()
 {
-
+	m_alive = true;
 }
 
 
-Player::Player(Texture * playerTexture)
+Player::Player(Texture * playerTexture, Texture * deadTexture)
 {
 	tag = "player";
+	m_alive = true;
 	m_texture = playerTexture;
+	m_textureDead = deadTexture;
 	attackCooldown = 1;
 	m_position.x = 200;
 	m_position.y = 200;
@@ -34,22 +36,9 @@ void Player::Update(float deltaTime)
 
 void Player::Draw(SpriteBatch * m_spriteBatch)
 {
-	//m_spriteBatch->DrawSprite(m_texture, m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight());
 	m_spriteBatch->DrawSpriteTransformed3x3(m_texture, m_localTransform.data[0]);
 }
 
-void Player::OnCollision(GameObject& other)
-{
-	//deal with collision
-	if (other.tag == "Bullet")
-	{
-		//you're a bullet
-
-	}
-	//check if bullet and handle appropriately
-	
-
-}
 
 void Player::MoveNorth(float deltaTime)
 {
@@ -111,3 +100,28 @@ void Player::MoveNorthWest(float deltaTime)
 	m_rotation = PI * 1.75f;
 }
 
+
+void Player::OnCollision(GameObject * a_other)
+{
+	if (a_other->tag == "bullet") //if player hit bullet
+	{
+
+	}
+	else if (a_other->tag == "player") //if player hit player
+	{
+		
+	}
+	else if (a_other->tag == "tank") //if player hit tank
+	{
+		//m_alive = false;
+		m_texture = m_textureDead;
+	}
+	else if (a_other->tag == "rock") //if player hit rock
+	{
+		
+	}
+	else //hit something else// tankTurret
+	{
+
+	}
+}

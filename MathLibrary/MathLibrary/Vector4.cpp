@@ -162,3 +162,41 @@ Vector4 Vector4::Normalise()
 	}
 	return temp;
 }
+
+
+float Vector4::Dot(Vector4 vectorB)
+{
+	return ((x *  vectorB.x) + (y * vectorB.y) + (z * vectorB.z));
+}
+
+
+Vector4 Vector4::Cross(Vector4 &vectorB)
+{
+	Vector4 result;
+	result.x = ((y * vectorB.z) - (z * vectorB.y));
+	result.y = ((z * vectorB.x) - (x * vectorB.z));
+	result.z = ((x * vectorB.y) - (y * vectorB.x));
+	return result;
+}
+
+
+float Vector4::Dot(Vector4 vectorA, Vector4 vectorB)
+{
+	return ((vectorA.x * vectorB.x) + (vectorA.y * vectorB.y) + (vectorA.z * vectorB.z));
+}
+
+
+Vector4 Vector4::Cross(Vector4 &vectorA, Vector4 &vectorB)
+{
+	Vector4 result;
+	result.x = ((vectorA.y * vectorB.z) - (vectorA.z * vectorB.y));
+	result.y = ((vectorA.z * vectorB.x) - (vectorA.x * vectorB.z));
+	result.z = ((vectorA.x * vectorB.y) - (vectorA.y * vectorB.x));
+	return result;
+}
+
+
+Vector4 operator*(float lhs, Vector4 &rhs)
+{
+	return rhs * lhs;
+}

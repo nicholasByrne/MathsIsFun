@@ -4,89 +4,63 @@
 
 BulletManager::BulletManager()
 {
-	liveBullets = 0;
-	maxBullets = 200;
-	bulletArray = new Bullet * [maxBullets];
-	for (int i = 0; i < maxBullets; i++)
-	{
-		bulletArray[i] = nullptr; //new Bullet(startingPosition, targetPosition, gunAngle, bulletSpeed, bulletTexture);
-	}
+
+	iter = bulletVector.begin();
+	//new Bullet(startingPosition, targetPosition, gunAngle, bulletSpeed, bulletTexture);
 }
 
 
-BulletManager::BulletManager(SpriteBatch * spritebatch, int WindowHeight, int WindowWidth)
+BulletManager::BulletManager(SpriteBatch * spritebatch, int WindowHeight, int WindowWidth, CollisionManager * collisionManager)
 {
-	liveBullets = 0;
-	maxBullets = 200;
-	bulletArray = new Bullet * [maxBullets];
 	m_spriteBatch = spritebatch;
 	windowWidth = WindowWidth;
 	windowHeight = WindowHeight;
-
-	for (int i = 0; i < maxBullets; i++)
-	{
-		bulletArray[i] = nullptr; //new Bullet(startingPosition, targetPosition, gunAngle, bulletSpeed, bulletTexture);
-	}
+	m_collisionManager = collisionManager;
+	iter = bulletVector.begin();
 }
 
 
 BulletManager::~BulletManager()
 {
-	delete[] bulletArray;
+	
 }
 
 void BulletManager::UpdateBullets(float deltaTime)
 {
-	for (int i = 0; i < maxBullets; i++)
+	for (iter = bulletVector.begin(); iter != bulletVector.end(); iter++)
 	{
-		if (bulletArray[i] != nullptr)
-		{
-			if (BulletOutOfWindow(bulletArray[i]) == true)
-			{
-				delete bulletArray[i];
-				bulletArray[i] = nullptr;
-			}
-			else
-				bulletArray[i]->Update(deltaTime);
-		}
+		(*iter)->Update(deltaTime);
 	}
 }
 
 
 void BulletManager::DrawBullets()
 {
-	for (int i = 0; i < maxBullets; i++)
+	for (iter = bulletVector.begin(); iter != bulletVector.end(); iter++)
 	{
-
-		//bulletArray[i].Draw();
-		if (bulletArray[i] != nullptr)
-		{
-			bulletArray[i]->Draw(m_spriteBatch);
-		}
+		if ((*iter) != nullptr)
+		(*iter)->Draw(m_spriteBatch);
 	}
 }
 
 
-void BulletManager::CreateBullet(Vector2 startingPosition, Vector2 targetPosition, float gunAngle, float bulletSpeed, Texture * bulletTexture)
+void BulletManager::CreateBullet(Vector2 startingPosition, Vector2 targetPosition, float gunAngle, float bulletSpeed, bool playerShot, Texture * bulletTexture)
 {
-	delete bulletArray[liveBullets];
-	bulletArray[liveBullets] = new Bullet(startingPosition, targetPosition, gunAngle, bulletSpeed, bulletTexture);
-	liveBullets++;
-	if (liveBullets == maxBullets)
-	{
-		liveBullets = 0;
-	}
+	Bullet * newBullet = new Bullet(startingPosition, targetPosition, gunAngle, bulletSpeed, playerShot, bulletTexture);
+	bulletVector.push_back(newBullet);
+	m_collisionManager->AddEntity((GameObject*)newBullet);
+
+	//bulletVector.push_back(new Bullet(startingPosition, targetPosition, gunAngle, bulletSpeed, playerShot, bulletTexture));
+	//m_collisionManager->AddEntity(bulletVector.back);
 }
 
 
 void BulletManager::ClearBullets()
 {
-	for (int i = 0; i < maxBullets; i++)
+	for (iter = bulletVector.begin(); iter != bulletVector.end(); iter++)
 	{
-		if (bulletArray[i] != nullptr)
-		{
-			delete bulletArray[i];
-		}
+		delete (*iter);
+		bulletVector.erase(iter);
 	}
 }
 
@@ -111,4 +85,26 @@ bool BulletManager::BulletOutOfWindow(Bullet * bullet)
 	}
 	else
 		return false;
+}
+
+
+void BulletManager::RemoveDead()
+{
+	for (iter = bulletVector.begin(); iter != bulletVector.end(); /*iter++*/)
+	{
+
+
+		if ((*iter) != nullptr && (*iter)->m_alive == false)
+		{
+			m_collisionManager->RemoveDead();
+			/*delete *iter;
+			*iter = nullptr;*/
+			//m_collisionManager->RemoveDead();
+			iter = bulletVector.erase(iter);
+
+		}
+		else {
+			iter++;
+		}
+	}
 }

@@ -87,20 +87,17 @@ Matrix4x4 Matrix4x4::operator-=(const Matrix4x4 &other)
 
 Matrix4x4 Matrix4x4::operator*(const Matrix4x4 &other) const
 {
-	Matrix4x4 matrix;
-	for (int i = 0; i < 4; i++)
+	Matrix4x4 result;
+	for (int i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 4; j++)
+		for (int j = 0; j < 3; j++)
 		{
-			float sum = 0;
-			for (int k = 0; k < 4; k++)
-			{
-				matrix.data[i][j] = (data[i][k] * other.data[k][j]);
-			}
-			matrix.data[i][j] = sum;
+			Vector4 row(data[i][0], data[i][1], data[i][2], data[i][3]);
+			Vector4 column(other.data[0][j], other.data[1][j], other.data[2][j], other.data[3][j]);
+			result.data[i][j] = row.Dot(column);
 		}
 	}
-	return matrix;
+	return result;
 }
 
 

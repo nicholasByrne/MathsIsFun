@@ -1,14 +1,14 @@
 #pragma once
 #include "Vector4.h"
+#include "Vector3.h"
 
-//uses floating-point data in row-major right-handed form:
+//uses floating-point data in column-major right-handed form:
 class Matrix4x4
 {
 public:
 	Matrix4x4();
 	~Matrix4x4();
 
-	//bool operator==(const Matrix3x3 &other) const;
 
 	void operator=(const Matrix4x4 &other);
 

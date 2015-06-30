@@ -3,7 +3,7 @@
 Vector2::Vector2()
 {
 	x = 0;
-	y = 1;
+	y = 0;
 }
 
 
@@ -147,7 +147,7 @@ Vector2 Vector2::Perpindicular()
 
 float Vector2::Dot(Vector2 vectorB)
 {
-	return ((x *  vectorB.x) + (y + vectorB.y));
+	return ((x *  vectorB.x) + (y * vectorB.y));
 }
 
 
@@ -167,6 +167,11 @@ float Vector2::Distance(Vector2& vectorA, Vector2& vectorB)
 float Vector2::Angle(const Vector2& vectorA, const Vector2& vectorB)
 {
 	return atan2(vectorA.y - vectorB.y, vectorA.x - vectorB.x);
-	
+
 }
 
+
+Vector2 operator*(float lhs, Vector2 &rhs)
+{
+	return rhs * lhs;
+}

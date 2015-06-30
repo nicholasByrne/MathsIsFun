@@ -8,12 +8,12 @@ class Player : public GameObject
 {
 public:
 	Player();
-	Player(Texture * playerTexture);
+	Player(Texture * playerTexture, Texture * deadTexture);
+	Texture * m_textureDead;
 	~Player();
 
 	virtual void Update(float deltaTime);
 	virtual void Draw(SpriteBatch * m_spriteBatch);
-	void OnCollision(GameObject& other);
 
 	void MoveNorth(float deltaTime);
 	void MoveEast(float deltaTime);
@@ -25,7 +25,7 @@ public:
 	void MoveSouthWest(float deltaTime);
 	void MoveNorthWest(float deltaTime);
 
-	//void Shoot(float deltaTime, BulletManager & bulletManager);
+	void OnCollision(GameObject * a_other);
 
 	float attackCooldown;
 

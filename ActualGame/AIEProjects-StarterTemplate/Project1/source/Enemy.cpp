@@ -3,11 +3,13 @@
 
 Enemy::Enemy()
 {
+	m_alive = true;
 }
 
 
 Enemy::~Enemy()
 {
+
 }
 
 

@@ -3,7 +3,6 @@
 #include "SceneNode.h"
 #include "Texture.h"
 #include "SpriteBatch.h"
-#include "CollisionCircle.h"
 #include <string>
 
 class SpriteBatch;
@@ -22,21 +21,17 @@ public:
 	virtual void Update(float deltaTime);
 	virtual void Draw(SpriteBatch * m_spriteBatch);
 
-	//CollisionCircle collisionCircle;
-
-	//Matrix3x3 localMatrix;
-
 	std::string tag;
 	Vector2 m_position;
 	Vector2 m_velocity;
 	Vector2 m_scale;
 	float m_rotation;
-	float m_radius;
 	void Translate(Vector2 & translation);
+	bool m_alive;
 
 	Texture * m_texture;
 	
-	virtual void OnCollision(GameObject & a_other);
+	virtual void OnCollision(GameObject * a_other);
 	
 protected:
 	int m_maxHealth;

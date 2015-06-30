@@ -36,11 +36,14 @@ public:
 protected:
 
 	SpriteBatch *m_spritebatch;
-	CollisionManager collisionManager;
+	CollisionManager * collisionManager;
 	Texture * m_playerTexture;
 	Texture * m_bulletTexture;
 	//Texture * m_tankTexture;
 	Texture * m_tankTurretTexture;
+	Texture * m_blood;
+
+	Font * m_font;
 
 	Vector2 mousePos;
 	
@@ -53,14 +56,10 @@ protected:
 	float angle;
 
 	Player * player1;
-	Tank * tank1;
-	Tank * tank2;
-	Tank * tank3;
-	Tank * tank4;
-	TankTurret * tank1Turret;
-	TankTurret * tank2Turret;
-	TankTurret * tank3Turret;
-	TankTurret * tank4Turret;
+	Tank * tank[4];
+	TankTurret* tankTurret[4];
+	
+	int aliveTanks;
 
 private:
 };
